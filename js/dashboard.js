@@ -262,7 +262,7 @@ function addProduct() {
     price: price,
   };
 
-  // PUSH PRODUCT
+  //  PUSH PRODUCT
 
   products.push(newProduct);
 
