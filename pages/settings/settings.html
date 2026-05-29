@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/settings.css">
+    <title>StokPailot</title>
+     <script>
+        if (!isLoggedIn()) {
+            window.location.href = "/login.html";
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <!-- Header Section -->
+
+    <div id="header-container"></div>
+
+    <!-- Main Section -->
+
+    <main>
+
+        <section class="settings-main">
+
+            <!-- SETTINGS Section -->
+
+            <section class="settings-hero">
+
+                <div class="settings-content">
+
+                    <div>
+
+                        <span>SYSTEM SETTINGS</span>
+
+                        <h2>
+                            Manage Your Platform Preferences
+                        </h2>
+
+                        <p>
+                            Configure system settings,
+                            manage account preferences,
+                            customize inventory operations,
+                            control notifications,
+                            and secure your StokPailot workspace
+                            from one centralized settings system.
+                        </p>
+
+                    </div>
+
+                    <div class="settings-btns">
+
+                        <button class="first-btn">
+
+                            Save Changes
+
+                        </button>
+
+                        <button class="second-btn">
+
+                            Reset Settings
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- SETTINGS OVERVIEW -->
+
+            <section class="dashboard-stats">
+
+                <div class="dashboard-card">
+
+                    <div class="card-top">
+
+                        <h3>Account Status</h3>
+
+                        <span>🟢</span>
+
+                    </div>
+
+                    <h2>Active</h2>
+
+                    <p>
+                        System Running Normally
+                    </p>
+
+                </div>
+
+                <div class="dashboard-card">
+
+                    <div class="card-top">
+
+                        <h3>Security Level</h3>
+
+                        <span>🔒</span>
+
+                    </div>
+
+                    <h2>High</h2>
+
+                    <p>
+                        Protection Enabled
+                    </p>
+
+                </div>
+
+                <div class="dashboard-card">
+
+                    <div class="card-top">
+
+                        <h3>Notifications</h3>
+
+                        <span>🔔</span>
+
+                    </div>
+
+                    <h2>Enabled</h2>
+
+                    <p>
+                        Alerts Active
+                    </p>
+
+                </div>
+
+                <div class="dashboard-card">
+
+                    <div class="card-top">
+
+                        <h3>Cloud Backup</h3>
+
+                        <span>☁️</span>
+
+                    </div>
+
+                    <h2>Synced</h2>
+
+                    <p>
+                        Latest Backup Completed
+                    </p>
+
+                </div>
+
+            </section>
+
+            <!-- ACCOUNT SETTINGS -->
+
+            <section class="settings-section">
+
+                <div class="section-header">
+
+                    <h2>
+                        Account Settings
+                    </h2>
+
+                </div>
+
+                <table>
+
+                    <tbody>
+
+                        <tr>
+
+                            <td>
+                                Full Name
+                            </td>
+
+                            <td>
+                                <input type="text" placeholder="Enter Full Name">
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>
+                                Email Address
+                            </td>
+
+                            <td>
+                                <input type="email" placeholder="Enter Email">
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>
+                                Business Name
+                            </td>
+
+                            <td>
+                                <input type="text" placeholder="Enter Business Name">
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>
+                                Phone Number
+                            </td>
+
+                            <td>
+                                <input type="text" placeholder="Enter Phone Number">
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>
+                                Password
+                            </td>
+
+                            <td>
+                                <input type="password" placeholder="Update Password">
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+                <button type="submit">Update</button>
+
+            </section>
+
+            <!-- SYSTEM PREFERENCES -->
+
+
+            <section class="analytics-section">
+
+                <div class="analytics-card">
+
+                    <div class="section-header">
+
+                        <h2>
+                            Notification Preferences
+                        </h2>
+
+                    </div>
+
+                    <div class="settings-options">
+
+                        <label>
+
+                            <input type="checkbox">
+
+                            Email Notifications
+
+                        </label>
+
+                        <label>
+
+                            <input type="checkbox">
+
+                            Inventory Alerts
+
+                        </label>
+
+                        <label>
+
+                            <input type="checkbox">
+
+                            Order Updates
+
+                        </label>
+
+                        <label>
+
+                            <input type="checkbox">
+
+                            Monthly Reports
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+                <div class="analytics-card">
+
+                    <div class="section-header">
+
+                        <h2>
+                            System Preferences
+                        </h2>
+
+                    </div>
+
+                    <div class="settings-options">
+
+                        <label>
+
+                            <input type="checkbox">
+
+                            Dark Mode
+
+                        </label>
+
+                        <label>
+
+                            <input type="checkbox">
+
+                            Automatic Backups
+
+                        </label>
+
+                        <label>
+
+                            <input type="checkbox">
+
+                            Multi-User Access
+
+                        </label>
+
+                        <label>
+
+                            <input type="checkbox">
+
+                            Real-Time Inventory Sync
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- SECURITY SETTINGS -->
+
+
+            <section class="dashboard-panels">
+
+                <div class="panel">
+
+                    <div class="section-header">
+
+                        <h2>
+                            Security Settings
+                        </h2>
+
+                    </div>
+
+                    <ul class="activity-list">
+
+                        <li>
+                            🔒 Two-factor authentication enabled
+                        </li>
+
+                        <li>
+                            🛡️ Secure login protection active
+                        </li>
+
+                        <li>
+                            ☁️ Automatic cloud backups enabled
+                        </li>
+
+                        <li>
+                            📍 Login activity monitoring active
+                        </li>
+
+                        <li>
+                            🔑 Password security updated recently
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <div class="panel">
+
+                    <div class="section-header">
+
+                        <h2>
+                            System Information
+                        </h2>
+
+                    </div>
+
+                    <ul class="alert-list">
+
+                        <li>
+                            🌍 Platform: StokPailot
+                        </li>
+
+                        <li>
+                            ☁️ Powered By WaidSoko
+                        </li>
+
+                        <li>
+                            🚀 Cloud Infrastructure Active
+                        </li>
+
+                        <li>
+                            🔄 Last System Sync: Today
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </section>
+
+            <!-- QUICK ACTIONS -->
+
+            <section class="quick-actions">
+
+                <div class="quick-action-card">
+
+                    <span>🔒</span>
+
+                    <h3>Security</h3>
+
+                    <p>
+                        Protect and secure your business account.
+                    </p>
+
+                </div>
+
+                <div class="quick-action-card">
+
+                    <span>🔔</span>
+
+                    <h3>Notifications</h3>
+
+                    <p>
+                        Manage alerts and system notifications.
+                    </p>
+
+                </div>
+
+                <div class="quick-action-card">
+
+                    <span>☁️</span>
+
+                    <h3>Cloud Backup</h3>
+
+                    <p>
+                        Backup and synchronize business data.
+                    </p>
+
+                </div>
+
+                <div class="quick-action-card">
+
+                    <span>⚙️</span>
+
+                    <h3>Preferences</h3>
+
+                    <p>
+                        Customize platform settings and controls.
+                    </p>
+
+                </div>
+
+            </section>
+
+        </section>
+
+    </main>
+
+    <script src="js/app.js"></script>
+    <script src="../../js/head.js"></script>
+
+</body>
+
+</html>

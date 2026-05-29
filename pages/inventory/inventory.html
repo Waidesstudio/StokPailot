@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/inventory.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>StokPailot</title>
+     <script>
+        if (!isLoggedIn()) {
+            window.location.href = "/login.html";
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <!-- Header Section -->
+
+    <div id="header-container"></div>
+
+    <!-- Main Section -->
+    <main>
+
+        <!-- INVENTORY Section -->
+
+        <section class="inventory-main">
+
+
+
+            <section class="inventory-hero">
+
+                <div class="inventory-content">
+
+                    <div>
+
+                        <span>INVENTORY MANAGEMENT</span>
+
+                        <h2>
+                            Manage Products & Stock Efficiently
+                        </h2>
+
+                        <p>
+                            Organize products,
+                            monitor stock levels,
+                            manage categories,
+                            track inventory movement,
+                            and maintain complete product control
+                            from one intelligent inventory system.
+                        </p>
+
+                    </div>
+
+                    <div class="inventory-btns">
+
+                        <button id="add-product-btn" class="first-btn">
+
+                            + Add Product
+
+                        </button>
+
+                        <button id="export-inventory-btn" class="second-btn">
+
+                            Export Inventory
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- INVENTORY SUMMARY -->
+
+            <section class="dashboard-stats">
+
+                <div class="dashboard-card">
+
+                    <div class="card-top">
+
+                        <h3>Total Products</h3>
+
+                        <span>📦</span>
+
+                    </div>
+
+                    <h2 id="total-products">12,450</h2>
+
+                    <p>
+                        Products In Inventory
+                    </p>
+
+                </div>
+
+                <div class="dashboard-card">
+
+                    <div class="card-top">
+
+                        <h3>Low Stock</h3>
+
+                        <span>⚠️</span>
+
+                    </div>
+
+                    <h2 id="low-stock">24</h2>
+
+                    <p>
+                        Requires Restocking
+                    </p>
+
+                </div>
+
+                <div class="dashboard-card">
+
+                    <div i class="card-top">
+
+                        <h3>Out Of Stock</h3>
+
+                        <span>❌</span>
+
+                    </div>
+
+                    <h2 id="out-of-stock">8</h2>
+
+                    <p>
+                        Currently Unavailable
+                    </p>
+
+                </div>
+
+                <div class="dashboard-card">
+
+                    <div class="card-top">
+
+                        <h3>Categories</h3>
+
+                        <span>🗂️</span>
+
+                    </div>
+
+                    <h2 id="total-categories">18</h2>
+
+                    <p>
+                        Active Product Categories
+                    </p>
+
+                </div>
+
+            </section>
+
+            <!-- INVENTORY TABLE -->
+
+            <section id="inventory-section" class="inventory-section">
+
+                <div class="section-header">
+
+                    <h2>
+                        Product Inventory
+                    </h2>
+
+                    <div class="inventory-actions">
+
+                        <div id="product-form" class="product-form">
+
+                            <input id="product-name" type="text" placeholder="Product Name">
+
+                            <input id="product-category" type="text" placeholder="Category">
+
+                            <input id="product-stock" type="number" placeholder="Stock">
+
+                            <input id="product-price" type="number" placeholder="Price">
+
+                            <button id="save-product-btn">
+
+                                Save Product
+
+                            </button>
+
+                        </div>
+                        <div class="inventory-search-row">
+
+                            <input id="search-product" type="text" placeholder="Search Product">
+
+                            <button id="new-product-btn">
+                                + New Product
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <table id="inventory-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Product</th>
+
+                            <th>Category</th>
+
+                            <th>Stock</th>
+
+                            <th>Price</th>
+
+                            <th>Status</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="inventory-body">
+
+                        <tr>
+
+                            <td>Wireless Mouse</td>
+
+                            <td>Electronics</td>
+
+                            <td>120</td>
+
+                            <td>ꠄ15,000</td>
+
+                            <td class="instock">
+
+                                In Stock
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>Office Chair</td>
+
+                            <td>Furniture</td>
+
+                            <td>8</td>
+
+                            <td>ꠄ80,000</td>
+
+                            <td class="lowstock">
+
+                                Low Stock
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>Bluetooth Speaker</td>
+
+                            <td>Electronics</td>
+
+                            <td>52</td>
+
+                            <td>ꠄ45,000</td>
+
+                            <td class="instock">
+
+                                In Stock
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>Gaming Keyboard</td>
+
+                            <td>Accessories</td>
+
+                            <td>15</td>
+
+                            <td>ꠄ35,000</td>
+
+                            <td class="instock">
+
+                                In Stock
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>Printer Ink</td>
+
+                            <td>Office Supplies</td>
+
+                            <td>0</td>
+
+                            <td>ꠄ12,000</td>
+
+                            <td class="cancelled">
+
+                                Out Of Stock
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </section>
+
+            <!-- STOCK ANALYTICS -->
+
+
+            <section class="analytics-section">
+
+                <div class="analytics-card">
+
+                    <div class="panel-header">
+
+                        <h2>
+                            Inventory Movement
+                        </h2>
+
+                        <button>
+
+                            View Report
+
+                        </button>
+
+                    </div>
+
+                    <div class="chart-bars">
+
+                        <div class="chart-container">
+                            <canvas id="inventory-chart"></canvas>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="analytics-card">
+
+                    <div class="panel-header">
+
+                        <h2>
+                            Stock Capacity
+                        </h2>
+
+                    </div>
+
+                    <div class="progress-card">
+
+                        <div class="progress-circle">
+
+                            <h2 id="warehouse-capacity">72%</h2>
+
+                        </div>
+
+                        <p>
+                            Warehouse Capacity Used
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- INVENTORY PANELS -->
+
+            <section class="inv-panels">
+
+                <div class="panel">
+
+                    <div class="panel-header">
+
+                        <h2>
+                            Recent Inventory Activity
+                        </h2>
+
+                    </div>
+
+                    <ul id="activity-list" class="activity-list">
+
+                        <li>
+                            📦 50 new Wireless Mouse units added
+                        </li>
+
+                        <li>
+                            ⚠️ Office Chair stock running low
+                        </li>
+
+                        <li>
+                            ✅ Inventory sync completed
+                        </li>
+
+                        <li>
+                            📊 Product analytics generated
+                        </li>
+
+                        <li>
+                            🚚 New stock shipment received
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <div class="panel">
+
+                    <div class="panel-header">
+
+                        <h2>
+                            Inventory Alerts
+                        </h2>
+
+                    </div>
+
+                    <ul id="alert-list" class="alert-list">
+
+                        <li>
+                            ⚠️ 24 products below stock limit
+                        </li>
+
+                        <li>
+                            ❌ 8 products out of stock
+                        </li>
+
+                        <li>
+                            ⚠️ Warehouse capacity nearing limit
+                        </li>
+
+                        <li>
+                            📦 Supplier delivery pending
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </section>
+
+            <!-- QUICK ACTIONS -->
+
+            <section class="quick-actions">
+
+                <div id="quick-add-product" class="quick-action-card">
+
+                    <span>📦</span>
+
+                    <h3>Add Product</h3>
+
+                    <p>
+                        Add new inventory products quickly.
+                    </p>
+
+                </div>
+
+                <div id="quick-manage-categories" class="quick-action-card">
+
+                    <span>🗂️</span>
+
+                    <h3>Manage Categories</h3>
+
+                    <p>
+                        Organize products by categories.
+                    </p>
+
+                </div>
+
+                <div id="quick-track-stock" class="quick-action-card">
+
+                    <span>🚚</span>
+
+                    <h3>Track Stock</h3>
+
+                    <p>
+                        Monitor stock movement in real-time.
+                    </p>
+
+                </div>
+
+                <div id="quick-inventory-reports" class="quick-action-card">
+
+                    <span>📊</span>
+
+                    <h3>Inventory Reports</h3>
+
+                    <p>
+                        Generate inventory performance reports.
+                    </p>
+
+                </div>
+
+            </section>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <div id="footer-container"></div>
+
+    <script src="js/app.js"></script>
+    <script src="../../js/head.js"></script>
+    <script src="../js/footer.js"></script>
+    <script src="../../js/inventory.js"></script>
+
+
+</body>
+
+</html>

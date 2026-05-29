@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/auth.css">
+    <title>Login - StokPailot</title>
+</head>
+
+<body>
+    <main>
+        <section class="auth-section">
+            <!-- LEFT SIDE IMAGE -->
+            <div class="auth-image">
+                <img src="assets/img/StokPailot.png" alt="Login Image">
+            </div>
+
+            <!-- RIGHT SIDE LOGIN -->
+            <div class="login-container">
+                <!-- HEADER -->
+                <div class="login-header">
+                    <img src="assets/img/logoicon.png" alt="StokPailot logo" width="60" height="60">
+                    <a href="index.html">
+                        <h1>StokPailot</h1>
+                    </a>
+                    <p>Smart Inventory Management</p>
+                </div>
+
+                <!-- LOGIN BOX -->
+                <div class="login-auth-box">
+                    <h2>Welcome Back</h2>
+
+                    <p class="auth-text">
+                        Login to continue managing
+                        your inventory and business
+                        operations with StokPailot.
+                    </p>
+
+                    <input type="text" id="userName" placeholder="Enter Username">
+                    <input type="password" id="passWord" placeholder="Enter Password">
+
+                    <button onclick="login()">Login</button>
+
+                    <p class="switch-auth">
+                        Don't have an account?
+                        <a href="register.html">Register</a>
+                    </p>
+
+                    <p id="loginError"></p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="js/auth.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,416 @@
+/* PROFILE SECTION */
+
+.profile-section{
+    width: 100%;
+    padding: 120px 6%;
+    background: #020617;
+    color: white;
+}
+
+/* PROFILE HERO */
+
+.profile-hero{
+    width: 100%;
+    padding: 40px;
+    border-radius: 25px;
+    background: linear-gradient(
+        135deg,
+        rgba(15,23,42,0.95),
+        rgba(30,41,59,0.85)
+    );
+    border: 1px solid rgba(255,255,255,0.08);
+    margin-bottom: 40px;
+}
+
+/* PROFILE CONTENT */
+
+.profile-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+/* PROFILE INFO */
+
+.profile-info{
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    flex: 1;
+    min-width: 300px;
+}
+
+
+.profile-info span{
+    color: #38bdf8;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+
+.profile-info h2{
+    font-size: 40px;
+    margin: 10px 0;
+    line-height: 1.1;
+}
+
+
+.profile-info p{
+    color: #cbd5e1;
+    line-height: 1.7;
+    max-width: 650px;
+}
+
+
+/* PROFILE IMAGE */
+
+.profile-image{
+    position: relative;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #38bdf8;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+
+.profile-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* UPLOAD INPUT */
+
+#profile-upload{
+    display: none;
+}
+
+/* UPLOAD LABEL */
+
+.upload-label{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.7);
+    text-align: center;
+    padding: 8px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+.upload-label:hover{
+    background: rgba(56,189,248,0.8);
+}
+
+/* PROFILE BUTTONS */
+
+.profile-btns{
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+
+.first-btn,
+.second-btn{
+    height: 55px;
+    padding: 0 28px;
+    border: none;
+    border-radius: 14px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+
+.first-btn{
+    background: linear-gradient(
+        135deg,
+        #06b6d4,
+        #8b5cf6
+    );
+    color: white;
+}
+
+
+.second-btn{
+    background: rgba(255,255,255,0.08);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+
+.first-btn:hover,
+.second-btn:hover{
+    transform: translateY(-3px);
+}
+
+/* DASHBOARD STATS */
+
+.dashboard-stats{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+
+.dashboard-card{
+    padding: 25px;
+    border-radius: 20px;
+    background: rgba(15,23,42,0.9);
+    border: 1px solid rgba(255,255,255,0.08);
+    transition: 0.3s;
+}
+
+
+.dashboard-card:hover{
+    transform: translateY(-5px);
+}
+
+
+.card-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+
+.card-top h3{
+    font-size: 17px;
+}
+
+
+.card-top span{
+    font-size: 24px;
+}
+
+
+.dashboard-card h2{
+    margin-bottom: 10px;
+}
+
+
+.dashboard-card p{
+    color: #94a3b8;
+}
+
+/* SECTION STYLING */
+
+.inventory-section,
+.analytics-section,
+.dashboard-panels,
+.quick-actions{
+    margin-bottom: 40px;
+}
+
+
+.section-header{
+    margin-bottom: 20px;
+}
+
+
+.section-header h2{
+    font-size: 28px;
+}
+
+/* PROFILE TABLE */
+
+.inventory-section{
+    padding: 30px;
+    border-radius: 20px;
+    background: rgba(15,23,42,0.9);
+    border: 1px solid rgba(255,255,255,0.08);
+    overflow-x: auto;
+}
+
+
+.inventory-section table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+
+.inventory-section tr{
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+
+.inventory-section td{
+    padding: 20px;
+}
+
+
+.inventory-section input{
+    width: 100%;
+    height: 55px;
+    padding: 0 16px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.03);
+    color: white;
+    outline: none;
+}
+
+/* ANALYTICS SECTION */
+
+.analytics-section{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
+    gap: 20px;
+}
+
+
+.analytics-card{
+    padding: 30px;
+    border-radius: 20px;
+    background: rgba(15,23,42,0.9);
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+
+.analytics-card p{
+    color: #cbd5e1;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+/* SETTINGS OPTIONS */
+
+.settings-options{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+.settings-options label{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #e2e8f0;
+}
+
+
+.settings-options input{
+    width: 18px;
+    height: 18px;
+}
+
+/* PANELS */
+
+.dashboard-panels{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
+    gap: 20px;
+}
+
+
+.panel{
+    padding: 30px;
+    border-radius: 20px;
+    background: rgba(15,23,42,0.9);
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+
+.activity-list,
+.alert-list{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    color: #cbd5e1;
+}
+
+
+.activity-list li,
+.alert-list li{
+    list-style: none;
+    padding: 15px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.03);
+}
+
+
+/* QUICK ACTIONS */
+
+.quick-actions{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+    gap: 20px;
+}
+
+
+.quick-action-card{
+    padding: 30px;
+    border-radius: 20px;
+    background: rgba(15,23,42,0.9);
+    border: 1px solid rgba(255,255,255,0.08);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+
+.quick-action-card:hover{
+    transform: translateY(-6px);
+}
+
+
+.quick-action-card span{
+    font-size: 35px;
+    display: block;
+    margin-bottom: 20px;
+}
+
+
+.quick-action-card h3{
+    margin-bottom: 10px;
+}
+
+
+.quick-action-card p{
+    color: #94a3b8;
+    line-height: 1.7;
+}
+
+
+/* MOBILE RESPONSIVE */
+
+@media(max-width: 768px){
+
+    .profile-section{
+        padding: 100px 5%;
+    }
+
+    .profile-content{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .profile-info{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .profile-info h2{
+        font-size: 32px;
+    }
+
+    .inventory-section td{
+        display: block;
+        width: 100%;
+        padding: 12px 0;
+    }
+
+}

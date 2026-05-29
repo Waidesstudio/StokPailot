@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Dashboard - StokPailot</title>
+     <script>
+        if (!isLoggedIn()) {
+            window.location.href = "/login.html";
+        }
+    </script>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <div id="header-container"></div>
+
+    <main>
+
+        <!--DASHBOARD HERO-->
+
+        <section class="d-container" id="dashboard">
+
+
+
+            <div class="d-content">
+
+                <div>
+
+                    <span>DASHBOARD OVERVIEW</span>
+
+                    <h2 id="dashboard-title">
+                        Welcome Back To StokPailot
+                    </h2>
+
+                    <p id="dashboard-text">
+                        Monitor products, manage inventory,
+                        track orders, analyze business growth,
+                        and control your entire inventory system
+                        from one intelligent dashboard.
+                    </p>
+
+                </div>
+
+                <div class="dashboard-actions">
+
+                    <button id="hero-add-product-btn" class="first-btn">
+                        + Add Product
+                    </button>
+
+                    <button id="generate-report-btn" class="second-btn">
+                        Generate Report
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!--DASHBOARD STATS-->
+
+            <section class="dashboard-stats">
+
+                <div class="dashboard-card">
+
+                    <div class="card-top">
+
+                        <h3>Total Products</h3>
+
+                        <span>📦</span>
+
+                    </div>
+
+                    <h2 id="total-products">12,450</h2>
+
+                    <p>
+                        +12% Increase This Month
+                    </p>
+
+                </div>
+
+                <div class="dashboard-card">
+
+                    <div class="card-top">
+
+                        <h3>Total Revenue</h3>
+
+                        <span>💰</span>
+
+                    </div>
+
+                    <h2 id="total-revenue">ꠄ4.2M</h2>
+
+                    <p>
+                        +18% Revenue Growth
+                    </p>
+
+                </div>
+
+                <div class="dashboard-card">
+
+                    <div class="card-top">
+
+                        <h3>Low Stock</h3>
+
+                        <span>⚠️</span>
+
+                    </div>
+
+                    <h2 id="low-stock">24</h2>
+
+                    <p>
+                        Requires Attention
+                    </p>
+
+                </div>
+
+                <div class="dashboard-card">
+
+                    <div class="card-top">
+
+                        <h3>Total Orders</h3>
+
+                        <span>🛒</span>
+
+                    </div>
+
+                    <h2 id="total-orders">1,245</h2>
+
+                    <p>
+                        +8% New Orders
+                    </p>
+
+                </div>
+
+            </section>
+
+            <!-- ANALYTICS SECTION -->
+
+            <section class="analytics-section">
+
+                <div id="analytics-card" class="analytics-card">
+
+                    <div class="section-header">
+
+                        <h2>Revenue Analytics</h2>
+
+                        <button id="view-report-btn">
+                            View Full Report
+                        </button>
+
+                    </div>
+
+                    <div class="chart-container">
+                        <canvas id="chartbar"></canvas>
+                    </div>
+
+                </div>
+
+                <div id="target-card" class="analytics-card">
+
+                    <div class="section-header">
+
+                        <h2>Monthly Target</h2>
+
+                    </div>
+
+                    <div class="progress-card">
+
+                        <div class="progress-circle">
+
+                            <h2 id="monthly-target">78%</h2>
+
+                        </div>
+
+                        <p>
+                            Inventory Target Completed
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!--INVENTORY TABLE-->
+
+            <section id="inventory-section" class="inventory-section">
+
+                <div class="section-header">
+
+                    <h2>Inventory Products</h2>
+
+                    <div class="inventory-actions">
+
+                        <div id="product-form" class="product-form">
+
+                            <input id="product-name" type="text" placeholder="Product Name">
+
+                            <input id="product-category" type="text" placeholder="Category">
+
+                            <input id="product-stock" type="number" placeholder="Stock">
+
+                            <input id="product-price" type="number" placeholder="Price">
+
+                            <button id="save-product-btn">
+                                Save Product
+                            </button>
+
+                        </div>
+
+                        <input id="search-product" type="text" placeholder="Search Product">
+
+                        <button id="table-add-product-btn" class="first-btn">
+                            + New Product
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <table id="inventory-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Product</th>
+
+                            <th>Category</th>
+
+                            <th>Stock</th>
+
+                            <th>Price</th>
+
+                            <th>Status</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="inventory-body">
+
+                        <tr>
+
+                            <td>Wireless Mouse</td>
+
+                            <td>Electronics</td>
+
+                            <td>120</td>
+
+                            <td>ꠄ15,000</td>
+
+                            <td class="instock">
+                                In Stock
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>Office Chair</td>
+
+                            <td>Furniture</td>
+
+                            <td>8</td>
+
+                            <td>ꠄ80,000</td>
+
+                            <td class="lowstock">
+                                Low Stock
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>Bluetooth Speaker</td>
+
+                            <td>Electronics</td>
+
+                            <td>52</td>
+
+                            <td>ꠄ45,000</td>
+
+                            <td class="instock">
+                                In Stock
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>Gaming Keyboard</td>
+
+                            <td>Accessories</td>
+
+                            <td>15</td>
+
+                            <td>ꠄ35,000</td>
+
+                            <td class="instock">
+                                In Stock
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>Printer Ink</td>
+
+                            <td>Office Supplies</td>
+
+                            <td>5</td>
+
+                            <td>ꠄ12,000</td>
+
+                            <td class="lowstock">
+                                Low Stock
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </section>
+
+            <!-- RECENT ACTIVITY -->
+
+            <section class="dashboard-panels">
+
+                <div class="panel">
+
+                    <div class="section-header">
+
+                        <h2>Recent Activity</h2>
+
+                    </div>
+
+                    <ul id="activity-list" class="activity-list">
+
+                        <li>
+                            New stock added for Wireless Mouse
+                        </li>
+
+                        <li>
+                            Office Chair stock updated
+                        </li>
+
+                        <li>
+                            Revenue analytics generated
+                        </li>
+
+                        <li>
+                            Product inventory synced
+                        </li>
+
+                        <li>
+                            New customer order received
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <div class="panel">
+
+                    <div class="section-header">
+
+                        <h2>Quick Alerts</h2>
+
+                    </div>
+
+                    <ul id="alert-list" class="alert-list">
+
+                        <li>
+                            ⚠️ 24 products running low
+                        </li>
+
+                        <li>
+                            ⚠️ Inventory sync incomplete
+                        </li>
+
+                        <li>
+                            ⚠️ Backup required
+                        </li>
+
+                        <li>
+                            ⚠️ Supplier update pending
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </section>
+
+            <!-- QUICK ACTIONS -->
+
+            <section class="quick-actions">
+
+                <div id="quick-add-inventory" class="quick-action-card">
+
+                    <span>📦</span>
+
+                    <h3>Add Inventory</h3>
+
+                    <p>
+                        Add new products into inventory.
+                    </p>
+
+                </div>
+
+                <div id="quick-analytics" class="quick-action-card">
+
+                    <span>📊</span>
+
+                    <h3>Analytics</h3>
+
+                    <p>
+                        View detailed analytics reports.
+                    </p>
+
+                </div>
+
+                <div id="quick-track-orders" class="quick-action-card">
+
+                    <span>🚚</span>
+
+                    <h3>Track Orders</h3>
+
+                    <p>
+                        Monitor customer orders in real-time.
+                    </p>
+
+                </div>
+
+                <div id="quick-settings" class="quick-action-card">
+
+                    <span>⚙️</span>
+
+                    <h3>System Settings</h3>
+
+                    <p>
+                        Manage dashboard configurations.
+                    </p>
+
+                </div>
+
+                </div>
+            </section>
+        </section>
+
+    </main>
+
+    <!-- Footer Section -->
+    <div id="footer-container"></div>
+
+
+    <script src="js/app.js"></script>
+    <script src="/js/head.js"></script>
+    <script src="/js/footer.js"></script>
+    <script src="js/dashboard.js"></script>
+
+</body>
+
+</html>

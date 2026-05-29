@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="../../css/analytics.css">
+    <title>StokPailot</title>
+    <script>
+        if (!isLoggedIn()) {
+            window.location.href = "/login.html";
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <!-- Header Section -->
+
+    <div id="header-container"></div>
+
+    <!-- Main Section -->
+    <main>
+
+        <!-- ANALYTICS Section -->
+
+        <section id="analytics-main" class="analytics-main">
+
+
+            <section id="analytics-hero" class="analytics-hero">
+
+                <div id="analytics-content" class="analytics-content">
+
+                    <div>
+
+                        <span>BUSINESS ANALYTICS</span>
+
+                        <h2 id="analytics-title">
+                            Monitor Business Performance In Real-Time
+                        </h2>
+
+                        <p>
+                            Analyze revenue,
+                            monitor inventory performance,
+                            track customer activity,
+                            evaluate product sales,
+                            and generate intelligent reports
+                            from one centralized analytics system.
+                        </p>
+
+                    </div>
+
+                    <div class="analytics-btns">
+
+                        <button id="generate-report-btn" class="first-btn">
+
+                            Generate Report
+
+                        </button>
+
+                        <button id="export-analytics-btn" class="second-btn">
+
+                            Export Analytics
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ANALYTICS SUMMARY -->
+
+
+            <section class="dashboard-stats">
+
+                <div class="dashboard-card">
+
+                    <div class="card-top">
+
+                        <h3>Total Revenue</h3>
+
+                        <span>💰</span>
+
+                    </div>
+
+                    <h2 id="total-revenue">ꠄ4.2M</h2>
+
+                    <p>
+                        Revenue This Month
+                    </p>
+
+                </div>
+
+                <div class="dashboard-card">
+
+                    <div class="card-top">
+
+                        <h3>Total Sales</h3>
+
+                        <span>📈</span>
+
+                    </div>
+
+                    <h2 id="total-sales">12,845</h2>
+
+                    <p>
+                        Products Sold
+                    </p>
+
+                </div>
+
+                <div class="dashboard-card">
+
+                    <div class="card-top">
+
+                        <h3>Customers</h3>
+
+                        <span>👥</span>
+
+                    </div>
+
+                    <h2 id="total-customers">3,420</h2>
+
+                    <p>
+                        Active Customers
+                    </p>
+
+                </div>
+
+                <div class="dashboard-card">
+
+                    <div class="card-top">
+
+                        <h3>Growth Rate</h3>
+
+                        <span>🚀</span>
+
+                    </div>
+
+                    <h2 id="growth-rate">18%</h2>
+
+                    <p>
+                        Monthly Business Growth
+                    </p>
+
+                </div>
+
+            </section>
+
+            <!-- SALES ANALYTICS -->
+
+            <section class="analytics-section">
+
+                <div id="revenue-card" class="analytics-card">
+
+                    <div class="section-header">
+
+                        <h2>
+                            Revenue Overview
+                        </h2>
+
+                        <button>
+
+                            View Report
+
+                        </button>
+
+                    </div>
+
+                    <div class="chart-container">
+
+                        <canvas id="analytics-chart"></canvas>
+
+                    </div>
+
+                </div>
+
+                <div class="analytics-card">
+
+                    <div class="section-header">
+
+                        <h2>
+                            Performance Target
+                        </h2>
+
+                    </div>
+
+                    <div class="progress-card">
+
+                        <div class="progress-circle">
+
+                            <h2 id="performance-target">84%</h2>
+
+                        </div>
+
+                        <p>
+                            Monthly Revenue Target Achieved
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- SALES TABLE -->
+
+            <section id="sales-section" class="inventory-section">
+
+                <div class="section-header">
+
+                    <h2>
+                        Product Performance
+                    </h2>
+
+                    <div class="inventory-actions">
+
+                        <input id="search-product" type="text" placeholder="Search Product">
+
+                        <button id="export-data-btn">
+
+                            Export Data
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <table id="analytics-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Product</th>
+
+                            <th>Category</th>
+
+                            <th>Units Sold</th>
+
+                            <th>Revenue</th>
+
+                            <th>Performance</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="analytics-table-body">
+
+                        <tr>
+
+                            <td>Wireless Mouse</td>
+
+                            <td>Electronics</td>
+
+                            <td>1,250</td>
+
+                            <td>ꠄ1.2M</td>
+
+                            <td class="instock">
+
+                                Excellent
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>Office Chair</td>
+
+                            <td>Furniture</td>
+
+                            <td>420</td>
+
+                            <td>ꠄ950K</td>
+
+                            <td class="instock">
+
+                                Strong
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>Gaming Keyboard</td>
+
+                            <td>Accessories</td>
+
+                            <td>850</td>
+
+                            <td>ꠄ760K</td>
+
+                            <td class="instock">
+
+                                Excellent
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>Bluetooth Speaker</td>
+
+                            <td>Electronics</td>
+
+                            <td>610</td>
+
+                            <td>ꠄ680K</td>
+
+                            <td class="lowstock">
+
+                                Average
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>Printer Ink</td>
+
+                            <td>Office Supplies</td>
+
+                            <td>120</td>
+
+                            <td>ꠄ140K</td>
+
+                            <td class="cancelled">
+
+                                Low
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </section>
+
+
+            <!-- ANALYTICS PANELS -->
+
+            <section class="dashboard-panels">
+
+                <div class="panel">
+
+                    <div class="section-header">
+
+                        <h2>
+                            Recent Analytics Activity
+                        </h2>
+
+                    </div>
+
+                    <ul id="activity-list" class="activity-list">
+
+                        <li>
+                            📈 Revenue increased by 18%
+                        </li>
+
+                        <li>
+                            📊 Monthly report generated
+                        </li>
+
+                        <li>
+                            🛒 Customer activity updated
+                        </li>
+
+                        <li>
+                            🚀 Sales target nearing completion
+                        </li>
+
+                        <li>
+                            📦 Inventory analytics synced
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <div class="panel">
+
+                    <div class="section-header">
+
+                        <h2>
+                            Analytics Insights
+                        </h2>
+
+                    </div>
+
+                    <ul id="insight-list" class="alert-list">
+
+                        <li>
+                            💡 Electronics category performing best
+                        </li>
+
+                        <li>
+                            📉 Office Supplies sales decreasing
+                        </li>
+
+                        <li>
+                            🚀 Customer retention improving
+                        </li>
+
+                        <li>
+                            📊 Revenue target almost achieved
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </section>
+
+
+            <!-- QUICK ACTIONS -->
+
+            <section class="quick-actions">
+
+                <div id="quick-sales-reports" class="quick-action-card">
+
+                    <span>📈</span>
+
+                    <h3>Sales Reports</h3>
+
+                    <p>
+                        Generate advanced business reports.
+                    </p>
+
+                </div>
+
+                <div id="track-performance" class="quick-action-card">
+
+                    <span>📊</span>
+
+                    <h3>Track Performance</h3>
+
+                    <p>
+                        Monitor product and sales growth.
+                    </p>
+
+                </div>
+
+                <div id="customer-insights" class="quick-action-card">
+
+                    <span>👥</span>
+
+                    <h3>Customer Insights</h3>
+
+                    <p>
+                        Analyze customer behavior trends.
+                    </p>
+
+                </div>
+
+                <div id="growth-analytics" class="quick-action-card">
+
+                    <span>🚀</span>
+
+                    <h3>Growth Analytics</h3>
+
+                    <p>
+                        Measure business growth performance.
+                    </p>
+
+                </div>
+
+            </section>
+
+        </section>
+    </main>
+
+    <script src="../../js/analytics.js"></script>
+    <script src="../../js/head.js"></script>
+
+</body>
+
+</html>
