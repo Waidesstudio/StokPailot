@@ -1,16 +1,10 @@
 function register() {
-  // HERE IS WHERE I GET INPUT VALUES
-
   let fullname = document.getElementById("fullname").value;
   let email = document.getElementById("email").value;
   let username = document.getElementById("newUsername").value;
   let password = document.getElementById("newPassword").value;
 
-  // THIS IS FOR ERROR MESSAGE
-
   let error = document.getElementById("registerError");
-
-  // CHECK EMPTY FIELDS
 
   if (fullname === "" || email === "" || username === "" || password === "") {
     error.innerHTML = "Please fill all fields";
@@ -116,54 +110,6 @@ function getCurrentUser() {
 function updateHeaderForAuth() {
   let userLogin = document.getElementById("userLogin");
   if (!userLogin) {
-    return; //
-  }
-  
-  if (isLoggedIn()) {
-    let user = getCurrentUser();
-    
-    userLogin.innerHTML = `
-      <span style="color: #333; margin-right: 15px;">
-        Welcome, <strong>${user.fullname}</strong>
-      </span>
-      <a href="/profile.html" class="loginbutton">Profile</a>
-      <button onclick="logout()" class="registerbutton" style="cursor: pointer; background: none; border: none; padding: 0;">Logout</button>
-    `;
-  } else {
-    userLogin.innerHTML = `
-      <a href="/login.html" class="loginbutton">Login</a>
-      <a href="/register.html" class="registerbutton">Register</a>
-    `;
-  }
-}
-
-// Check if user is logged in.
-
-function isLoggedIn() {
-  let loggedInUser = localStorage.getItem("loggedInUser");
-  return loggedInUser !== null;
-}
-
-// Get current logged-in user
-
-function getCurrentUser() {
-  let username = localStorage.getItem("loggedInUser");
-  if (username === null) {
-    return null;
-  }
-  
-  let userDataString = localStorage.getItem(username);
-  if (userDataString === null) {
-    return null;
-  }
-  
-  let userData = JSON.parse(userDataString);
-  return userData;
-}
-
-function updateHeaderForAuth() {
-  let userLogin = document.getElementById("userLogin");
-  if (!userLogin) {
     return;
   }
   
@@ -171,11 +117,8 @@ function updateHeaderForAuth() {
     let user = getCurrentUser();
     
     userLogin.innerHTML = `
-      <span style="color: #333; margin-right: 15px;">
-        Welcome, <strong>${user.fullname}</strong>
-      </span>
       <a href="/profile.html" class="loginbutton">Profile</a>
-      <button onclick="logout()" class="registerbutton" style="cursor: pointer; background: none; border: none; padding: 0;">Logout</button>
+      <button onclick="logout()" class="registerbutton">Logout</button>
     `;
   } else {
     userLogin.innerHTML = `

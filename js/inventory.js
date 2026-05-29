@@ -82,9 +82,7 @@ let inventoryProducts = JSON.parse(
 
 // SAVE INVENTORY
 
-function saveProducts() {
-  localStorage.setItem("stokpailotProducts", JSON.stringify(products));
-}
+localStorage.setItem("stokpailotProducts", JSON.stringify(inventoryProducts));
 
 // FORMAT MONEY
 
@@ -534,14 +532,6 @@ quickInventoryReports.addEventListener(
 
   openReports,
 );
-
-function showProductForm() {
-  if (productForm.style.display === "grid") {
-    productForm.style.display = "none";
-  } else {
-    productForm.style.display = "grid";
-  }
-}
 
 // START INVENTORY SYSTEM
 

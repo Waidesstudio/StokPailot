@@ -305,9 +305,7 @@ function searchProducts() {
   });
 }
 
-// =======================================
 // MONTHLY TARGET
-// =======================================
 
 function updateMonthlyTarget() {
   let totalStock = 0;
@@ -325,9 +323,6 @@ function updateMonthlyTarget() {
   monthlyTarget.textContent = percentage + "%";
 }
 
-// =======================================
-// GENERATE REPORT
-// =======================================
 
 function generateReport() {
   const report = `
@@ -349,19 +344,13 @@ Total Orders: ${totalOrders.textContent}
   addActivity("Inventory report generated");
 }
 
-// =======================================
 // VIEW FULL REPORT
-// =======================================
 
 function viewFullReport() {
   inventorySection.scrollIntoView({
     behavior: "smooth",
   });
 }
-
-// =======================================
-// QUICK ACTIONS
-// =======================================
 
 function openAnalytics() {
   document.getElementById("analytics-card").scrollIntoView({
@@ -377,9 +366,7 @@ function openOrders() {
   alert("Order tracking system coming soon");
 }
 
-// =======================================
 // CHART.JS
-// =======================================
 
 const chartCanvas = document.getElementById("chartbar");
 
@@ -407,9 +394,7 @@ const chart = new Chart(chartCanvas, {
   },
 });
 
-// =======================================
 // LIVE CHART UPDATE
-// =======================================
 
 setInterval(function () {
   const randomRevenue = Math.floor(Math.random() * 900000);
@@ -421,9 +406,7 @@ setInterval(function () {
   chart.update();
 }, 4000);
 
-// =======================================
 // EVENT LISTENERS
-// =======================================
 
 heroAddProductBtn.addEventListener(
   "click",
@@ -485,9 +468,6 @@ quickSystemSettings.addEventListener(
   openSettings,
 );
 
-// =======================================
-// START DASHBOARD
-// =======================================
 
 hideProductForm();
 

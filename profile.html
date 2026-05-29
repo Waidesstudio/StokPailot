@@ -6,19 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/profile.css">
     <title>StokPailot</title>
+         <script src="js/auth.js"></script>
+    <script>
+        if (!isLoggedIn()) {
+            document.documentElement.innerHTML = "";
+            window.location.href = "login.html";
+            throw new Error("Access denied - redirecting to login");
+        }
+    </script>
 
 </head>
 
 <body>
 
-<!-- Header Section -->
-  <div id="header-container"></div>
+    <!-- Header Section -->
+    <div id="header-container"></div>
 
     <!-- Main Section -->
     <main>
 
         <section class="profile-section">
-            
+
             <!-- PROFILE Section -->
 
             <section class="profile-hero">
@@ -55,13 +63,13 @@
 
                     <div class="profile-btns">
 
-                        <button class="first-btn">
+                        <button class="first-btn" id="edit-profile-btn">
 
                             Edit Profile
 
                         </button>
 
-                        <button class="second-btn">
+                        <button class="second-btn" id="upload-image-btn">
 
                             Upload Image
 
@@ -178,7 +186,7 @@
                             </td>
 
                             <td>
-                                <input type="text" placeholder="Enter Full Name">
+                                <input type="text" id="fullname-input" placeholder="Enter Full Name" disabled>
                             </td>
 
                         </tr>
@@ -190,7 +198,7 @@
                             </td>
 
                             <td>
-                                <input type="email" placeholder="Enter Email Address">
+                                <input type="email" id="email-input" placeholder="Enter Email Address" disabled>
                             </td>
 
                         </tr>
@@ -202,7 +210,7 @@
                             </td>
 
                             <td>
-                                <input type="text" placeholder="Enter Phone Number">
+                                <input type="text" id="phone-input" placeholder="Enter Phone Number" disabled>
                             </td>
 
                         </tr>
@@ -214,7 +222,7 @@
                             </td>
 
                             <td>
-                                <input type="text" placeholder="Enter Business Name">
+                                <input type="text" id="businessname-input" placeholder="Enter Business Name" disabled>
                             </td>
 
                         </tr>
@@ -226,7 +234,7 @@
                             </td>
 
                             <td>
-                                <input type="text" placeholder="Enter Business Address">
+                                <input type="text" id="businessaddress-input" placeholder="Enter Business Address" disabled>
                             </td>
 
                         </tr>
@@ -459,6 +467,7 @@
 
     <script src="js/app.js"></script>
     <script src="/js/head.js"></script>
+    <script src="js/profile.js"></script>
 
 </body>
 
