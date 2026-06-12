@@ -4,15 +4,6 @@
     box-sizing: border-box;
 }
 
-:root {
-    --cyan: #00f5ff;
-    --purple: #8b5cf6;
-    --black: #050816;
-    --dark: #0f172a;
-    --white: #ffffff;
-    --gray: #94a3b8;
-}
-
 
 header {
     width: 100%;
@@ -21,15 +12,14 @@ header {
     align-items: center;
     justify-content: space-between;
     gap: 20px;
-    background: rgba(5, 8, 22, 0.95);
-    border-bottom: 1px solid rgba(0, 245, 255, 0.15);
+    background: black;
+    border-bottom: 1px solid rgba(0, 255, 255, 0.269);
     position: sticky;
 }
 
-
 header img{
     border-radius: 14px;
-    border: 2px solid var(--cyan);
+    border: 2px solid cyan;
     padding: 4px;
     box-shadow: 0 0 20px rgba(0, 247, 255, 0.186);
 }
@@ -44,7 +34,6 @@ header img{
     display: flex;
     align-items: center;
     gap: 15px;
-
     list-style: none;
     flex-wrap: wrap;
 }
@@ -56,12 +45,12 @@ header img{
     border-radius: 12px;
     font-weight: 600;
     transition: 0.4s ease;
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(255, 255, 255, 0.765);
 }
 
 .nav-link:hover {
-    background: rgba(0, 245, 255, 0.12);
-    box-shadow: 0 0 20px rgba(0, 245, 255, 0.25);
+    background: rgb(255, 255, 255);
+    box-shadow: 0 0 20px rgb(249, 249, 249);
     transform: translateY(-3px);
 }
 
@@ -74,50 +63,53 @@ header img{
 .loginbutton,
 .registerbutton {
     text-decoration: none;
-
-    padding: 12px 22px;
-
+    padding: 5px 22px;
     border-radius: 12px;
-
     font-weight: 700;
-
     transition: 0.4s ease;
 }
 
 .loginbutton {
-    border: 1px solid var(--cyan);
-    color: var(--cyan);
+    border: 1px solid cyan;
+    color: white;
 }
 
 .loginbutton:hover {
-    background: var(--cyan);
-    color: #050816;
-}
-
-.registerbutton {
-    background: linear-gradient(
-        135deg,
-        var(--cyan),
-        var(--purple)
-    );
-
-    color: #050816;
-}
-
-.registerbutton:hover {
-    transform: scale(1.05);
-}
-
-
-.menu-toggle {
-    display: none;
-
-    font-size: 2rem;
-    color: var(--white);
-
+    background: rgba(0, 255, 255, 0.655);
+    color: #000000;
     cursor: pointer;
 }
 
+.registerbutton {
+    border: 1px solid cyan;
+    color: white;
+}
+
+.registerbutton:hover {
+    transform: scale(1.1);
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    color: var(--white);
+    cursor: pointer;
+}
+
+.registerbutton1{
+    color: rgb(255, 255, 255);
+    background-color: rgba(255, 0, 0, 0.434);
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: 0.4s ease;
+}
+
+.registerbutton1:hover{
+    background-color: #000000;
+    color: white;
+}
 
 @media (max-width: 1000px) {
 

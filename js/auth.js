@@ -39,12 +39,9 @@ function register() {
 // HERE IS WHERE I BUILD THE LOGIN FUNCTION
 
 function login() {
-
   let username = document.getElementById("userName").value;
   let password = document.getElementById("passWord").value;
   let error = document.getElementById("loginError");
-
-
 
   if (username === "" || password === "") {
     error.innerHTML = "Please fill all fields";
@@ -55,7 +52,8 @@ function login() {
 
   let storedUser = localStorage.getItem(username);
   if (storedUser === null) {
-    error.innerHTML = "User not found, Please register first";
+    error.innerHTML =
+      "User not found, Please register first or try a different username";
     return;
   }
 
@@ -63,7 +61,7 @@ function login() {
   if (userData.password === password) {
     error.innerHTML = "Login successful";
 
-    // SO, WHERE IS WHERE I SAVE LOGIN SESSION
+    // SO, HERE IS WHERE I SAVE LOGIN SESSION
 
     localStorage.setItem("loggedInUser", username);
 
@@ -81,27 +79,23 @@ function logout() {
   window.location.href = "login.html";
 }
 
-
-
 function isLoggedIn() {
-  // Check if user is logged in
   let loggedInUser = localStorage.getItem("loggedInUser");
   return loggedInUser !== null;
 }
 
 function getCurrentUser() {
-  // Get the username
   let username = localStorage.getItem("loggedInUser");
   if (username === null) {
     return null;
   }
-  
+
   // Get user's full data
   let userDataString = localStorage.getItem(username);
   if (userDataString === null) {
     return null;
   }
-  
+
   // Convert string to object
   let userData = JSON.parse(userDataString);
   return userData;
@@ -112,18 +106,23 @@ function updateHeaderForAuth() {
   if (!userLogin) {
     return;
   }
-  
+
   if (isLoggedIn()) {
     let user = getCurrentUser();
-    
+
     userLogin.innerHTML = `
-      <a href="/profile.html" class="loginbutton">Profile</a>
-      <button onclick="logout()" class="registerbutton">Logout</button>
+    <a href="../../pages/dashboard.html" class="loginbutton">Dashboard</a>
+    <a href="../../pages/orders/orders.html" class="loginbutton">Orders</a>
+    <a href="../../pages/analytics/analytics.html" class="loginbutton">Analytics</a>
+    <a href="../profile.html" class="loginbutton">Profile</a>
+    <a href="../../pages/settings/settings.html" class="loginbutton">Settings</a>
+    <button onclick="logout()" class="registerbutton1">Logout</button>
     `;
   } else {
     userLogin.innerHTML = `
-      <a href="/login.html" class="loginbutton">Login</a>
-      <a href="/register.html" class="registerbutton">Register</a>
+    <a href="../pages/about.html" class="loginbutton">About Us</a>
+    <a href="/login.html" class="loginbutton">Login</a>
+    <a href="/register.html" class="registerbutton">Register</a>
     `;
   }
 }

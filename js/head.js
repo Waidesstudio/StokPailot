@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
         })
         .then(data => {
             document.getElementById('header-container').innerHTML = data;
-            // NEW: Call updateHeaderForAuth() AFTER header is loaded
             if (typeof updateHeaderForAuth === 'function') {
                 updateHeaderForAuth();
             }
