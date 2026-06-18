@@ -26,7 +26,27 @@ body {
   line-height: 1.7;
 }
 
+.d-container, .profile-section, .settings-main {
+    width: 100%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
 
+.d-content, .profile-hero, .settings-content {
+    width: 100%;
+    padding: 50px;
+    border-radius: 25px;
+    background: black;
+    border: 1px solid purple;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    position: relative;
+    overflow: hidden;
+}
 
 .first-btn,
 .second-btn {

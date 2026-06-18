@@ -114,7 +114,7 @@ function updateHeaderForAuth() {
     <a href="../../pages/dashboard.html" class="loginbutton">Dashboard</a>
     <a href="../../pages/orders/orders.html" class="loginbutton">Orders</a>
     <a href="../../pages/analytics/analytics.html" class="loginbutton">Analytics</a>
-    <a href="../profile.html" class="loginbutton">Profile</a>
+    <a href="../../pages/profile.html" class="loginbutton">Profile</a>
     <a href="../../pages/settings/settings.html" class="loginbutton">Settings</a>
     <button onclick="logout()" class="registerbutton1">Logout</button>
     `;
